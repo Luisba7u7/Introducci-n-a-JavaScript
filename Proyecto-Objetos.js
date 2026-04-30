@@ -47,3 +47,23 @@ const libro2 = new Libro(
 
 libro2.describirLibro();
 
+
+
+function quitarDuplicados(array){
+  
+  for(let i=0; i < array.length; i++){
+    
+    for(let j=1; j < array.length; j++){
+      if(array[i] === array[j]){
+        console.log(array);
+        
+      }
+      
+    }
+      
+    }
+  }
+
+
+quitarDuplicados([1,2,2,3,4,4,5,1,3]);
+
