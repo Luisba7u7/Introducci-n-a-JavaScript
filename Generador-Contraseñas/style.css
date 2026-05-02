@@ -1,0 +1,178 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+body span{
+    color: #474b4e;
+    margin-top: 100px;
+    margin-bottom: 40px;
+    font-size: 25px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.box-generator{
+    width: 90%;
+    max-width: 500px;
+    height: auto;
+    background-color: #22242a;
+    border-radius: 5px;
+    padding: 30px;
+    margin-bottom: 20px;
+}
+
+.box-generator div{
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+#result{
+    color: #4caf50;
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+.box-generator div img{
+    width: 30px;
+    cursor: pointer;
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+#mySlider{
+    -webkit-appearance: none;
+    margin-top: 20px;
+    width: 100%;
+    height: 15px;    
+    border-radius: 5px;
+    background-color: #333;
+    outline: none;
+
+}
+
+#mySlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: #e8e8e8;
+  cursor: pointer;
+}
+
+.checkboxs{
+    margin-top: 25px;
+}
+
+.sub{
+    margin-top: 20px;
+    align-items: center;
+}
+
+.checkboxs input[type="checkbox"]{
+  -webkit-appearance: none;
+  appearance: none;        
+  background: transparent;   
+  border: 2px solid white;
+  width: 25px; height: 25px;
+  position: relative;
+  cursor: pointer;
+}
+
+.checkboxs input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  left: 7px; top: 1px;
+  width: 6px; height: 14px;
+  border: 2px solid currentColor;
+  border-top: none; border-left: none;
+  transform: rotate(45deg);  
+}
+
+.checkboxs input[type="checkbox"]:checked {
+  background: #4caf50;
+  border-color: #4caf50;
+}
+
+.checkboxs div label{
+    margin-left: 15px;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.strength h2{
+    font-size: 15px;
+    color: #828282;
+}
+
+.strength h1{
+    font-size: 20px;
+    color: white;
+    justify-self: flex-end;
+    margin-left: auto;
+    margin-right: 15px;
+
+}
+
+
+.strength{
+    display: flex;
+    align-items: center;
+    background-color: #18171f;
+    margin-top: 30px;
+    padding: 15px;
+}
+
+.strength .boxs{
+    width: auto;
+    height: 50px;
+    padding: 10px;
+    gap: 10px;
+}
+
+.boxs div{
+    width: 10px;
+    height: 100%;
+    border: 1px solid white;
+}
+
+.btn-generator{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #4caf50;
+    gap: 20px;
+    cursor: pointer;
+}
+
+.btn-generator img{
+    width: 22px;
+}
+
+@media (max-width: 600px) {
+    body span {
+        font-size: 20px;
+        margin-top: 50px;
+    }
+    
+    .box-generator {
+        padding: 20px;
+    }
+
+    .checkboxs div label {
+        font-size: 14px;
+        margin-left: 10px;
+    }
+}
