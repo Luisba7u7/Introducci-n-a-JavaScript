@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador | Contraseñas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    
+
+</head>
+<body>
+    <span>Password Generator</span>
+    <section class="box-generator">
+        <div>
+            <h1 id="password"></h1>
+            <img id="copyPassword" src="https://cdn-icons-png.freepik.com/512/12891/12891532.png" alt="">
+        </div>
+    </section>
+    <section class="box-generator">
+         <div>
+            <h3>Character Length</h3>
+            <h1 id="result"></h1>
+         </div>
+         <div>
+            <input type="range"  id="mySlider" min="6" max="20" value="6">
+         </div>
+         <section class="checkboxs">
+            <div class="sub">
+                <input type="checkbox" id="uppercase"> 
+                <label for="">Include Uppercase Letters</label>
+            </div>
+            <div class="sub">
+                <input type="checkbox" name="" id="lowercase"> 
+                <label for="">Include Lowercase Letters</label>
+            </div>
+            <div class="sub">
+                <input type="checkbox" name="" id="numbers"> 
+                <label for="">Include Numbers</label>
+            </div>
+            <div class="sub">
+                <input type="checkbox" name="" id="symbols"> 
+                <label for="">Include Symbols</label>
+            </div>
+            <section class="strength">
+                
+                    <h2>STRENGTH</h2>
+                    <H1 id="result-strength"></H1>
+                    <div class="boxs">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+
+                    </div>    
+            </section>
+            <section class="btn-generator">
+                <h2>GENERATE</h2>
+                <img src="https://cdn-icons-png.flaticon.com/512/66/66831.png">
+
+            </section>
+         </section>
+         
+         
+
+    </section>
+    
+</body>
+<script src="password-generator.js"></script>
+</html>
