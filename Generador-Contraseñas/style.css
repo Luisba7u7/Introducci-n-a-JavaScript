@@ -43,6 +43,7 @@ body span{
     margin-left: auto;
 }
 
+
 .box-generator div img{
     width: 30px;
     cursor: pointer;
@@ -175,4 +176,6 @@ body span{
         font-size: 14px;
         margin-left: 10px;
     }
+
+    
 }
