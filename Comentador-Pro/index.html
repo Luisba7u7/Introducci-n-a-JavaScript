@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comments Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script src="configTailwind.js"></script>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/6809/6809247.png" type="image/png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</head>
+
+<body class="bg-stone-100 dark:bg-zinc-900 text-zinc-800 dark:text-zinc-100 min-h-screen transition-colors duration-300">
+
+  <!-- ── HEADER ── -->
+  <header class="sticky top-0 z-20 bg-stone-100 dark:bg-zinc-900 border-b border-stone-200 dark:border-zinc-700 transition-colors duration-300">
+    <div class="max-w-xl mx-auto px-5 py-3 flex items-center justify-between">
+      <h1 class="font-serif text-2xl tracking-tight">Comments Hub</h1>
+      <div class="flex items-center gap-4">
+        <span id="post-count" class="text-xs text-stone-400 dark:text-zinc-500">0 publicaciones</span>
+        <button id="theme-btn" class="flex items-center gap-1.5 text-xs font-medium text-stone-400 dark:text-zinc-400 border border-stone-300 dark:border-zinc-600 rounded-lg px-3 py-1.5 hover:border-stone-400 dark:hover:border-zinc-400 hover:text-stone-700 dark:hover:text-zinc-200 transition-colors">
+          <img id="theme-icon" src="https://api.iconify.design/ph/moon.svg" alt="tema" class="w-4 h-4 opacity-60" />
+          <span id="theme-label">Oscuro</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── MAIN ── -->
+  <main class="max-w-xl mx-auto px-5 py-6 flex flex-col gap-4">
+
+    <!-- Formulario -->
+    <section class="bg-white dark:bg-zinc-800 border border-stone-200 dark:border-zinc-700 rounded-2xl p-5 transition-colors duration-300">
+      <p class="text-sm font-medium mb-4">Nueva publicación</p>
+      <hr class="border-stone-100 dark:border-zinc-700 mb-4" />
+
+      <div class="flex gap-3 items-start">
+
+        <!-- Avatar preview del formulario -->
+        <img id="avatar-preview"
+          src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png"
+          alt="Avatar"
+          class="w-11 h-11 rounded-full object-cover border-2 border-stone-200 dark:border-zinc-600 shrink-0 mt-0.5 bg-stone-100 dark:bg-zinc-700"
+        />
+
+        <div class="flex-1 flex flex-col gap-3">
+
+          <!-- Campo: Nombre -->
+          <div>
+            <label class="block text-xs font-medium uppercase tracking-widest text-stone-400 dark:text-zinc-500 mb-1.5" for="input-name">Nombre</label>
+            <input id="input-name" type="text" maxlength="50" placeholder="¿Cómo te llamas?"
+              class="w-full bg-stone-50 dark:bg-zinc-900 border border-stone-200 dark:border-zinc-600 rounded-xl px-4 py-3 text-sm outline-none focus:border-stone-400 dark:focus:border-zinc-400 placeholder:text-stone-300 dark:placeholder:text-zinc-600 transition-colors" />
+          </div>
+
+          <!-- Campo: Publicación -->
+          <div>
+            <label class="block text-xs font-medium uppercase tracking-widest text-stone-400 dark:text-zinc-500 mb-1.5" for="input-comment">Publicación</label>
+            <textarea id="input-comment" rows="3" maxlength="400" placeholder="¿Qué quieres compartir?"
+              class="w-full resize-none bg-stone-50 dark:bg-zinc-900 border border-stone-200 dark:border-zinc-600 rounded-xl px-4 py-3 text-sm outline-none focus:border-stone-400 dark:focus:border-zinc-400 placeholder:text-stone-300 dark:placeholder:text-zinc-600 transition-colors"></textarea>
+            <p class="text-right text-xs text-stone-300 dark:text-zinc-600 mt-1">
+              <span id="char-count">0</span> / 400
+            </p>
+          </div>
+
+          <!-- Acciones del formulario -->
+          <div class="flex items-center justify-between flex-wrap gap-3">
+            <div>
+              <input type="file" id="file-input" accept="image/*" class="hidden" />
+              <label for="file-input" class="flex items-center gap-2 text-sm text-stone-400 dark:text-zinc-500 cursor-pointer hover:text-stone-600 dark:hover:text-zinc-300 transition-colors">
+                <img src="https://api.iconify.design/ph/image.svg" alt="foto" class="w-4 h-4 opacity-70" />
+                <span id="file-label">Foto (opcional)</span>
+              </label>
+            </div>
+            <button id="publish-btn" class="bg-zinc-800 dark:bg-stone-100 text-stone-100 dark:text-zinc-800 text-sm font-medium px-5 py-2 rounded-xl hover:bg-zinc-700 dark:hover:bg-stone-200 active:scale-95 transition-all">
+              Publicar
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Feed de publicaciones -->
+    <section id="feed" class="flex flex-col gap-3"></section>
+
+  </main>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
