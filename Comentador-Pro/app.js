@@ -75,6 +75,7 @@ function saveComments(){
 
 function handlePostSubmit(){
     
+
     const name = elements.nameInput.value.trim();
     const comment = elements.commentInput.value.trim();
 
@@ -147,13 +148,17 @@ function onCommentInput() {
 
 
 function createPost({ name, comment, avatar }) {
+    showNotification(messages.postSuccess, colorMessages.postSuccess);
+    
     return {
         id: Date.now().toString(),
         name,
         comment,
         avatar,
-        createdAt: new Date().toISOString()
+        createdAt: new Date().toISOString(),
     };
+
+    
 }
 
 function render() {
@@ -174,7 +179,7 @@ function renderPosts() {
         elements.feedEl.appendChild(card);
     });
 
-    showNotification(messages.postSuccess, colorMessages.postSuccess);
+    
 }
 
 function createCard({ id, name, comment, avatar, createdAt }) {
@@ -235,6 +240,8 @@ function createCard({ id, name, comment, avatar, createdAt }) {
     row.append(img, content);
 
     card.appendChild(row);
+
+    
 
     return card;
 }
