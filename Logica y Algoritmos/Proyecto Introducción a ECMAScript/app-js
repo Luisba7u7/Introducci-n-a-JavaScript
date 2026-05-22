@@ -1,12 +1,13 @@
 
+// viajes.js
 
 // Array para guardar los destinos
-var destinos = [];
+const destinos = [];
 
 // Función para registrar un destino de viaje
-function registrarDestino(destino, fecha, transporte) {
+const registrarDestino = (destino, fecha, transporte) => {
     // TODO: Crear un objeto con los datos del destino
-    var nuevoViaje = {
+    const nuevoViaje = {
         destino: destino,
         fecha: fecha,
         transporte: transporte,
@@ -14,44 +15,46 @@ function registrarDestino(destino, fecha, transporte) {
     };
 
     destinos.push(nuevoViaje);
+};
+
+const costoDestino = {
+    "Paris": 500,
+    "Londres": 400,
+    "New York": 600
 }
+
+
 
 // Función para calcular el costo del viaje
-function calcularCosto(destino, transporte) {
-    var costoBase = 0;
-
-    // Costo base por destino
-    if (destino === "Paris") {
-        costoBase = 500;
-    } else if (destino === "Londres") {
-        costoBase = 400;
-    } else if (destino === "New York") {
-        costoBase = 600;
-    }
-
-    // Costo adicional por tipo de transporte
-    if (transporte === "Avión") {
+const calcularCosto = (destino, transporte) => {
+  
+  let costoBase = costoDestino[destino] || 0;
+  
+  if (transporte === "Avión") {
         costoBase += 200;
-    } else if (transporte === "Tren") {
+  } else if (transporte === "Tren"){
         costoBase += 100;
-    }
+  }
+  
+  return costoBase;
+  
+};
 
-    return costoBase;
-}
+
+
 
 // Función para mostrar el itinerario de los viajes registrados
-function mostrarItinerario() {
-    // TODO: Recorrer el arreglo de destinos y mostrar la información de cada uno
-    for (var i = 0; i < destinos.length; i++) {
-        var viaje = destinos[i];
-        console.log("Destino: " + viaje.destino);
-        console.log("Fecha: " + viaje.fecha);
-        console.log("Transporte: " + viaje.transporte);
-        console.log("Costo: $" + viaje.costo);
+const mostrarItinerario = () => {
+    for (const viaje of destinos) {
+        console.log(`Destino: ${viaje.destino}`);
+        console.log(`Fecha: ${viaje.fecha}`);
+        console.log(`Transporte: ${viaje.transporte}`);
+        console.log(`Costo: $${viaje.costo}`);
         console.log("---------------------------");
     }
-}
+};
 
+// app.js
 
 // Iniciar la aplicación
 function iniciarApp() {
