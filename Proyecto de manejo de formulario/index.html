@@ -10,58 +10,42 @@
   <h1>Registro de Evento</h1>
   <form id="registroEvento">
     <label for="nombre">Nombre completo:</label>
-    <input type="text" id="nombre" name="nombre" required>
+    <input type="text" id="nombre" name="nombre" >
+    <p id="error-nombre" class="error"></p>
 
     <label for="correo">Correo electrónico:</label>
-    <input type="email" id="correo" name="correo" required>
+    <input type="email" id="correo" name="correo" >
+    <p id="error-correo" class="error"></p>
 
     <label for="telefono">Teléfono:</label>
-    <input type="tel" id="telefono" name="telefono" required>
+    <input type="tel" id="telefono" name="telefono" >
+    <p id="error-telefono" class="error"></p>
 
     <label>Intereses:</label>
     <label><input type="checkbox" name="intereses" value="tecnología"> Tecnología</label>
     <label><input type="checkbox" name="intereses" value="negocios"> Negocios</label>
     <label><input type="checkbox" name="intereses" value="arte"> Arte</label>
+    <p id="error-intereses" class="error"></p>
 
     <label>Horario preferido:</label>
-    <label><input type="radio" name="horario" value="mañana" required> Mañana</label>
+    <label><input type="radio" name="horario" value="mañana" > Mañana</label>
     <label><input type="radio" name="horario" value="tarde"> Tarde</label>
     <label><input type="radio" name="horario" value="noche"> Noche</label>
+    <p id="error-horario" class="error"></p>
 
     <label for="fecha">Fecha del evento:</label>
-    <input type="date" id="fecha" name="fecha" required>
+    <input type="date" id="fecha" name="fecha" >
+    <p id="error-fecha" class="error"></p>
 
     <label for="hora">Hora preferida:</label>
-    <input type="time" id="hora" name="hora" required>
+    <input type="time" id="hora" name="hora" >
+    <p id="error-hora" class="error"></p>
 
     <label for="archivo">Documento de identificación (opcional):</label>
     <input type="file" id="archivo" name="archivo">
 
     <button type="submit">Registrarse</button>
   </form>
-
-  <script>
-    document.getElementById('registroEvento').addEventListener('submit', function(event) {
-      event.preventDefault(); // Evita el envío automático del formulario
-
-      // Variables
-      const nombre = document.getElementById('nombre').value;
-      const correo = document.getElementById('correo').value;
-      const telefono = document.getElementById('telefono').value;
-      const intereses = document.querySelectorAll('input[name="intereses"]:checked');
-      const horario = document.querySelector('input[name="horario"]:checked');
-      const fecha = document.getElementById('fecha').value;
-      const hora = document.getElementById('hora').value;
-
-      // Validaciones básicas
-      if (!nombre || !correo || !telefono || intereses.length === 0 || !horario) {
-        alert('Por favor, completa todos los campos obligatorios.');
-        return;
-      }
-
-      // Si todo está bien
-      alert('Registro exitoso. ¡Gracias por registrarte!');
-    });
-  </script>
+  <script type="module" src="app.js"></script>
 </body>
 </html>
